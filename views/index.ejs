@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog Home</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1 class="text-center fade-in">Latest Posts</h1>
+
+  <% blogs.forEach(blog => { %>
+    <div class="card fade-in">
+      <h2 class="card-title"><%= blog.title %></h2>
+      <div class="card-meta">
+        <span>By <%= blog.author %></span>
+        <span><%= blog.createdAt.toDateString() %></span>
+      </div>
+      <p class="card-content"><%= blog.content.substring(0, 150) %>...</p>
+      <div class="card-actions">
+        <a href="/blogs/<%= blog._id %>" class="btn btn-primary">Read More</a>
+        <a href="/blogs/<%= blog._id %>/edit" class="btn btn-outline">Edit</a>
+        <form action="/blogs/<%= blog._id %>?_method=DELETE" method="POST" style="display: inline;">
+          <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+      </div>
+    </div>
+  <% }); %>
+</body>
+</html>

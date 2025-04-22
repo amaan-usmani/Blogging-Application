@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= blog.title %></title>
+</head>
+<body>
+  <div class="card fade-in">
+    <h2 class="card-title"><%= blog.title %></h2>
+    <div class="card-meta">
+      <span>By <%= blog.author %></span>
+      <span><%= blog.createdAt.toDateString() %></span>
+    </div>
+    <p class="card-content"><%= blog.content %></p>
+    <div class="card-actions">
+      <a href="/blogs/<%= blog._id %>/edit" class="btn btn-outline">Edit</a>
+      <form action="/blogs/<%= blog._id %>?_method=DELETE" method="POST" style="display: inline;">
+        <button type="submit" class="btn btn-danger">Delete</button>
+      </form>
+      <a href="/" class="btn btn-primary">Back to Home</a>
+    </div>
+  </div>
+</body>
+</html>

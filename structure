@@ -1,0 +1,17 @@
+blogging-website/
+│
+├── models/
+│   └── Blog.js
+│
+├── views/
+│   ├── index.ejs
+│   ├── new.ejs
+│   ├── edit.ejs
+│   └── show.ejs
+│
+├── public/
+│   └── styles.css
+│
+├── .env
+├── app.js
+├── package.json
